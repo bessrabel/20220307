@@ -1,0 +1,54 @@
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.container{
+  width: 300px;
+  height: 400px;
+}
+.container input{
+  display: none;
+}
+.container .slide_container{
+  width: 300px;
+  height: 300px;
+  font-size: 0;
+  position: relative;
+  overflow: hidden;
+}
+.container .slide_container .slidebox{
+  width: 900px;
+  height: 300px;
+  position: absolute;
+  left: 0;
+  transition: .5s;
+}
+.container .btn{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+.container .btn label{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+.container input[id=ck1]:checked ~.btn label[for=ck1],
+.container input[id=ck2]:checked ~.btn label[for=ck2],
+.container input[id=ck3]:checked ~.btn label[for=ck3]{
+  background-color: crimson;
+}
+.container input[id=ck1]:checked ~.slide_container .slidebox{
+  left: 0;
+}
+.container input[id=ck2]:checked ~.slide_container .slidebox{
+  left: -100%;
+}
+.container input[id=ck3]:checked ~.slide_container .slidebox{
+  left: -200%;
+}
